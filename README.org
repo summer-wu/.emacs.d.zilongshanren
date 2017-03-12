@@ -1,6 +1,10 @@
 * title
-https://zilongshanren.com/categories/Emacs/
-https://zilongshanren.com/LearnEmacs/ 
+
 他录制了很多视频教程
+
+- https://zilongshanren.com/categories/Emacs/
+- https://zilongshanren.com/LearnEmacs/ 
+- https://github.com/emacs-china/Spacemacs-rocks
+
 
 ** subtitle
