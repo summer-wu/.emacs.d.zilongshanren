@@ -3,7 +3,6 @@
 	     '(font . "Menlo-16"))
 
 
-
 ;; ----------------------------
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -66,7 +65,7 @@
 (setq initial-frame-alist '((fullscreen . maximized)))
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 (global-hl-line-mode t)
-(load-theme 'monokai t)
+;;(load-theme 'monokai t)
 
 (require 'hungry-delete)
 (global-hungry-delete-mode)
@@ -80,12 +79,16 @@
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
-;;(require 'smartparens-config)
-;;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
-(smartparens-global-mode t)
+(require 'smartparens-config)
+(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
+;;(smartparens-global-mode t)
 ;;org mode下 M-Return 会自动修正前面的index号码
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;;(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(setq auto-mode-alist
+      (append
+       '(("\\.js\\'" . js2-mode))
+       auto-mode-alist))
 (global-set-key (kbd "C-h C-f") 'find-function)
 (global-set-key (kbd "C-h C-v") 'find-variable)
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
