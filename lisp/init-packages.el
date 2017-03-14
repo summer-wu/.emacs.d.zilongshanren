@@ -3,7 +3,7 @@
 			 ("melpa-stable" . "http://elpa.emacs-china.org/melpa-stable/")
                          ;("melpa" . "http://elpa.emacs-china.org/melpa/")
 			 ))
- 
+  
 (require 'cl) ;;import common lisp
 (defvar zilongshanren/packages '(
 					  company
@@ -37,6 +37,7 @@
 
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
 
 (global-company-mode t)
 
