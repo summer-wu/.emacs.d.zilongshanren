@@ -1,4 +1,3 @@
-;;这是手动设置的，下面是通过custom界面设置的
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -6,23 +5,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+(require 'org-install)
+(require 'ob-tangle)
+(org-babel-load-file (expand-file-name "zilongshanren.org" user-emacs-directory))
 
-;; ----------------------------
-(defun open-my-init-file()
-  (interactive)
-  (find-file "~/.emacs.d/init.el"))
-
-(add-to-list 'load-path "~/.emacs.d/lisp")
-(require 'init-packages)
-(require 'init-ui)
-(require 'init-better-defaults)
-(require 'init-org)
-(require 'init-keybindings)
-(require 'init-org)
-
-(setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
-(load-file custom-file)
-
-(load "init-packages")
-(autoload 'test-autoload "testload")
-(test-autoload)
