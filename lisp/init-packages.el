@@ -31,9 +31,11 @@
 (global-hungry-delete-mode)
 
 
-(require 'smartparens-config)
-(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
-;;(smartparens-global-mode t);会导致自动输入两个单引号
+;;(require 'smartparens-config)
+;;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
+(smartparens-global-mode t);只有这一行时，autoload会导致自动输入两个单引号
+(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+(sp-local-pair 'lisp-interaction-mode "'" nil :actions nil)'
 
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
