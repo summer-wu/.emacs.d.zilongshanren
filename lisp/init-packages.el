@@ -1,19 +1,19 @@
 ;;(message package-archives) 这个时候这个变量还是void
 (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
 			 ("melpa-stable" . "http://elpa.emacs-china.org/melpa-stable/")
-                         ;("melpa" . "http://elpa.emacs-china.org/melpa/")
+					;("melpa" . "http://elpa.emacs-china.org/melpa/")
 			 ))
-  
+
 (require 'cl) ;;import common lisp
 (defvar zilongshanren/packages '(
-					  company
-					  monokai-theme
-					  hungry-delete
-					  counsel
-					  smartparens
-					  js2-mode
-					  popwin
-					  
+				 company
+				 monokai-theme
+				 hungry-delete
+				 counsel
+				 smartparens
+				 js2-mode
+				 popwin
+				 reveal-in-osx-finder				  
 				 ) "Default packages")
 (setq package-selected-packages zilongshanren/packages)
 (defun zilongshanren/packages-installed-p ()

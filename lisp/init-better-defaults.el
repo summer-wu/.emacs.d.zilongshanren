@@ -39,4 +39,22 @@
 	(indent-buffer)
 	(message "Indented buffer.")))))
 
+
+(setq hippie-expand-try-functions-list '(try-expand-dabbrev
+                                         try-expand-dabbrev-all-buffers
+                                         try-expand-dabbrev-from-kill
+                                         try-complete-file-name-partially
+                                         try-complete-file-name
+                                         try-expand-all-abbrevs
+                                         try-expand-list
+                                         try-expand-line
+                                         try-complete-lisp-symbol-partially
+                                         try-complete-lisp-symbol))
+
+(fset 'yes-or-no-p 'y-or-n-p);;把yes no提示改为y n
+;;(setq dired-recursive-deletes 'always) ;;这样就不用重复两次y了
+(setq dired-recursive-copies 'always)
+(require 'dired-x);;C-x C-j打开当前buffer所在目录
+(setq dired-dwim-target t);;打开两个buffer的时候会自动猜目标目录
+
 (provide 'init-better-defaults)

@@ -15,6 +15,14 @@
 
 (global-set-key (kbd "C-c p f") 'counsel-git)
 
+;;day04
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
+(global-set-key (kbd "s-/") 'hippie-expand)
+(with-eval-after-load 'dired ;;懒加载
+  (put 'dired-find-alternate-file 'disabled nil) ;;默认自动写入init.el中
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ;;避免生成很多dired buffer
+  )
 
 (provide 'init-keybindings)
+
+
