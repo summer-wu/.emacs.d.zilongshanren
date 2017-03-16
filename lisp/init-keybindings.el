@@ -23,6 +23,12 @@
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ;;避免生成很多dired buffer
   )
 
+
+;;C-w默认是kill-region，改成backward-kill
+;;http://stackoverflow.com/questions/3124844/what-are-your-favorite-global-key-bindings-in-emacs
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+
 (provide 'init-keybindings)
 
 

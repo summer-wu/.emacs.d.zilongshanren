@@ -15,7 +15,8 @@
 ;;(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (setq auto-mode-alist
       (append
-       '(("\\.js\\'" . js2-mode))
+       '(("\\.js\\'" . js2-mode)
+	 ("\\.html\\'" . web-mode))
        auto-mode-alist))
 
 (abbrev-mode t)
@@ -56,5 +57,19 @@
 (setq dired-recursive-copies 'always)
 (require 'dired-x);;C-x C-j打开当前buffer所在目录
 (setq dired-dwim-target t);;打开两个buffer的时候会自动猜目标目录
+
+(defun occur-dwim ()
+  "call occur with a sane default"
+(interactive)
+(push (if (region-active-p)
+	  (buffer-substring-no-properties
+	   (region-beginning)
+	   (region-end))
+	(let ((sym (thing-at-point 'symbol)))
+	  (when (stringp sym)
+	    (regexp-quote sym))))
+      regexp-history)
+(call-interactively 'occur))
+(global-set-key (kbd "M-s o") 'occur-dwim)
 
 (provide 'init-better-defaults)
