@@ -98,5 +98,6 @@
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+(require 'iedit) ;;会引入它的快捷键C-;
 (provide 'init-packages)
 
