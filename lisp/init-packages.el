@@ -16,6 +16,8 @@
 				 reveal-in-osx-finder
 				 web-mode
 				 js2-refactor
+				 expand-region
+				 iedit
 				 ) "Default packages")
 (setq package-selected-packages zilongshanren/packages)
 (defun zilongshanren/packages-installed-p ()
@@ -88,10 +90,13 @@
 (global-set-key (kbd "C-c t i") 'my-toggle-web-indent)
 
 ;;config js2-refactor
-
 (require 'js2-refactor)
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (js2r-add-keybindings-with-prefix "C-c C-m")
+
+;;config expand-region
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 (provide 'init-packages)
 

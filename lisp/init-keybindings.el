@@ -23,6 +23,9 @@
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ;;避免生成很多dired buffer
   )
 
+;;day05
+(global-set-key (kbd "M-s i") 'counsel-imenu)
+(global-set-key (kbd "M-s e") 'iedit-mode)
 
 ;;C-w默认是kill-region，改成backward-kill
 ;;http://stackoverflow.com/questions/3124844/what-are-your-favorite-global-key-bindings-in-emacs
