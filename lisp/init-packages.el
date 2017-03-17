@@ -21,6 +21,7 @@
 				 helm-ag
 				 flycheck
 				 auto-yasnippet
+				 evil
 				 ) "Default packages")
 (setq package-selected-packages zilongshanren/packages)
 (defun zilongshanren/packages-installed-p ()
@@ -94,7 +95,7 @@
 ;;config js2-refactor
 (require 'js2-refactor)
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
-(add-hook 'js2-mode-hook 'global-flycheck-mode)
+;;(add-hook 'js2-mode-hook 'global-flycheck-mode)
 (js2r-add-keybindings-with-prefix "C-c C-m")
 
 ;;config expand-region
@@ -105,6 +106,8 @@
 ;;yasnippets
 (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
+
+
 
 (provide 'init-packages)
 
