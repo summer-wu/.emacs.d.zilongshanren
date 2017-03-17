@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: n
+# name: count_of
+# key: count_of
+# --
+count_of_$1 = get_total("$1");

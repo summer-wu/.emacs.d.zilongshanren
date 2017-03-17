@@ -18,6 +18,9 @@
 				 js2-refactor
 				 expand-region
 				 iedit
+				 helm-ag
+				 flycheck
+				 auto-yasnippet
 				 ) "Default packages")
 (setq package-selected-packages zilongshanren/packages)
 (defun zilongshanren/packages-installed-p ()
@@ -87,17 +90,21 @@
   (if (eq major-mode 'css-mode)
       (setq css-indent-offset (if (= css-indent-offset 2) 4 2)))
   (setq indent-tabs-mode nil))
-(global-set-key (kbd "C-c t i") 'my-toggle-web-indent)
 
 ;;config js2-refactor
 (require 'js2-refactor)
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
+(add-hook 'js2-mode-hook 'global-flycheck-mode)
 (js2r-add-keybindings-with-prefix "C-c C-m")
 
 ;;config expand-region
 (require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
 
 (require 'iedit) ;;会引入它的快捷键C-;
+
+;;yasnippets
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
+
 (provide 'init-packages)
 
